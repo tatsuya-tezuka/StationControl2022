@@ -1,0 +1,14 @@
+■Version 1.2.0.1
+
+  □Release Date
+     2020/09/23
+
+  □Change Points
+    SharedAlarm:    v1.2.0.1  2020/09/23
+      Sharedalarmでカーソルがビジー状態のままとなる処置
+
+    SharedAlarm:    v1.1.0.1  2019/07/09
+      "新地上局"の局名を"臼田54m局"に変更
+
+    SharedAlarm:    v1.0.0.1  2017/08/26
+      初版
