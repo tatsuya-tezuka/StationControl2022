@@ -1,0 +1,5 @@
+LIBRARY mlang
+EXPORTS
+ ConvertINetMultiByteToUnicode
+ ConvertINetUnicodeToMultiByte
+ 
