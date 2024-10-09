@@ -1,0 +1,16 @@
+; EngValConvDLL.def : DLL のモジュール パラメーターを宣言します。
+
+
+LIBRARY        "EngValConvDll"
+
+EXPORTS
+	Dll_SetEqMonDbFileName	@2
+	Dll_SetMonDataPath		@3
+	Dll_AddMonitorName		@4
+	Dll_ClearDataFileList	@5
+	Dll_ClearMonitorName	@6
+	Dll_AddDataFileList		@7
+	Dll_GetMonitorDataEx	@8
+	Dll_GetOutDataList		@9
+	Dll_GetAllVal			@10
+	Dll_SetCallBack			@11
