@@ -1,0 +1,16 @@
+﻿################################################################################
+# この .gitignore ファイルは Microsoft(R) Visual Studio によって自動的に作成されました。
+################################################################################
+
+/SetupBin
+/StationControl/.vs/StationControl
+/StationControl/BIN
+/StationControl/ControlManagement/x64
+/StationControl/EngValConv/x64
+/StationControl/EngValConvDLL/x64
+/StationControl/OperationTimeLine/x64
+/StationControl/RemoteGraph/x64
+/StationControl/StationControl/x64
+/StationControl/x64
+/StationControlSetup/StationControlSetup
+/インストーラ_FA-Studio
