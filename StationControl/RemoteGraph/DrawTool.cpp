@@ -211,7 +211,7 @@ void CSelectTool::OnLButtonDown(CGraphWindow* pView, UINT nFlags, const CPoint& 
 				return;
 			}
 
-			selectMode = size;
+			selectMode = SelectMode::size;
 		}
 	}
 
@@ -405,7 +405,7 @@ void CSelectTool::OnMouseMove(CGraphWindow* pView, UINT nFlags, const CPoint& po
 
 	lastPoint = local;
 
-	if(selectMode == size && c_drawShape == selection){
+	if(selectMode == SelectMode::size && c_drawShape == selection){
 		c_last = point;
 //		SetCursor(pView->m_selection.GetHead()->GetHandleCursor(nDragHandle));
 #if 00
@@ -635,7 +635,7 @@ void CRectTool::OnLButtonDown(CGraphWindow* pView, UINT nFlags, const CPoint& po
 	pView->Add(pObj);
 	pView->Select(pObj);
 
-	selectMode = size;
+	selectMode = SelectMode::size;
 	nDragHandle = (m_drawShape == diff) ? (-1) : 1;
 	lastPoint = local;
 }
@@ -788,7 +788,7 @@ void CRectTool::Create(CGraphWindow* pView, const CRect& rc, bool change/* = tru
 	if( change )
 	{
 		pView->Select(pObj);
-		selectMode = size;
+		selectMode = SelectMode::size;
 		nDragHandle = 1;
 		lastPoint = local;
 	}

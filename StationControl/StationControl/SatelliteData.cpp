@@ -14830,7 +14830,7 @@ int CSatelliteData::opctcheck(struct paramtbl_t *param_adr, struct val_t *val_ad
 		return -1;
 	}
 	if (param_adr->l_intype == IN_X_ID) {
-		l_rc = sscanf_s(sz_indata, "%llx%s", &ll_hex, sz_work, sizeof(sz_work));
+		l_rc = sscanf_s(sz_indata, "%llx%s", &ll_hex, sz_work, (int)sizeof(sz_work));
 		if (l_rc != 1) {
 			l_rc = -1;
 		}
@@ -14842,11 +14842,11 @@ int CSatelliteData::opctcheck(struct paramtbl_t *param_adr, struct val_t *val_ad
 	}
 	else {
 		l_rc = uc_valchk(sz_indata, (int *)&l_hex, &d_data, 0);
-		l_rc = sscanf_s(sz_indata, "%lld%s", &ll_hex, sz_work, sizeof(sz_work));
+		l_rc = sscanf_s(sz_indata, "%lld%s", &ll_hex, sz_work, (int)sizeof(sz_work));
 		l_rc = uc_valchk(sz_indata, (int *)&l_dt, &d_data, 0);
 	}
 	if (l_rc < 0) {
-		l_rc = sscanf_s(sz_indata, "%lg%s", &d_data, sz_work, sizeof(sz_work));
+		l_rc = sscanf_s(sz_indata, "%lg%s", &d_data, sz_work, (int)sizeof(sz_work));
 		if (l_rc == 1) {
 			l_rc = 2;
 		}
@@ -14974,7 +14974,7 @@ int CSatelliteData::opctcheck(struct paramtbl_t *param_adr, struct val_t *val_ad
 		l_hou = -1;
 		l_min = -1;
 		l_sec = -1;
-		l_rc = sscanf_s(sz_indata, "%d:%d:%d%s", &l_hou, &l_min, &l_sec, sz_work, sizeof(sz_work));
+		l_rc = sscanf_s(sz_indata, "%d:%d:%d%s", &l_hou, &l_min, &l_sec, sz_work, (int)sizeof(sz_work));
 		if (l_rc == 1) {
 			l_sec = l_hou % 100;
 			l_hou /= 100;
@@ -15003,7 +15003,7 @@ int CSatelliteData::opctcheck(struct paramtbl_t *param_adr, struct val_t *val_ad
 		l_hou = -1;
 		l_min = -1;
 		l_sec = -1;
-		l_rc = sscanf_s(sz_indata, "%d %d:%d:%d%s", &l_tday, &l_hou, &l_min, &l_sec, sz_work, sizeof(sz_work));
+		l_rc = sscanf_s(sz_indata, "%d %d:%d:%d%s", &l_tday, &l_hou, &l_min, &l_sec, sz_work, (int)sizeof(sz_work));
 		if (l_rc == 1) {
 			l_sec = l_tday % 100;
 			l_tday /= 100;
@@ -15037,7 +15037,7 @@ int CSatelliteData::opctcheck(struct paramtbl_t *param_adr, struct val_t *val_ad
 		l_hou = -1;
 		l_min = -1;
 		l_sec = -1;
-		l_rc = sscanf_s(sz_indata, "%d-%d-%d%s", &l_year, &l_mon, &l_day, sz_work, sizeof(sz_work));
+		l_rc = sscanf_s(sz_indata, "%d-%d-%d%s", &l_year, &l_mon, &l_day, sz_work, (int)sizeof(sz_work));
 		if (l_rc == 1) {
 			l_day = l_year % 100;
 			l_year /= 100;
@@ -15222,7 +15222,7 @@ int CSatelliteData::uc_valchk(char *s, int *i_p, double *d_p, int l_opt)
 	default:
 		if ((int)d_p == -1){
 			//j = sscanf(s, "%lf%s", &d_data, sz_dmy);
-			j = sscanf_s(s, "%lf%s", &d_data, sz_dmy, sizeof(sz_dmy));
+			j = sscanf_s(s, "%lf%s", &d_data, sz_dmy, (int)sizeof(sz_dmy));
 			if (j == 1){
 				; /*d_data‚ð‚»‚Ì‚Ü‚Ü•Ô‚·*/
 			}
@@ -15244,7 +15244,7 @@ int CSatelliteData::uc_valchk(char *s, int *i_p, double *d_p, int l_opt)
 			return(1); /*®”’l*/
 		}
 		//if (sscanf(s, "%lf%s", &d_data, sz_dmy) != 1){ return(-1); }
-		if (sscanf_s(s, "%lf%s", &d_data, sz_dmy, sizeof(sz_dmy)) != 1){ return(-1); }
+		if (sscanf_s(s, "%lf%s", &d_data, sz_dmy, (int)sizeof(sz_dmy)) != 1){ return(-1); }
 		if ((d_data >  2147483647.0) || (d_data < -2147483648.0)){
 			if (i_p != NULL){ *i_p = 0x80000000; }
 			if ((d_p != NULL) && ((int)d_p != -1)){ *d_p = d_data; }

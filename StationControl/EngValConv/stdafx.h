@@ -37,3 +37,5 @@
 #endif // _AFX_NO_AFXCMN_SUPPORT
 
 
+#pragma warning(disable:4311) //'型キャスト': ポインターを 'long double *' から 'int' へ切り詰めます。
+#pragma warning(disable:4302) // '型キャスト': 'long double *' から 'int' へ切り詰めます。

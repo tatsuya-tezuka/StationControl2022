@@ -317,9 +317,10 @@ void CFrequencyCtrl::GetAnpData(CString satName, CString anpName)
 			data.szUpRNG, static_cast<TCHAR>(_countof(data.szUpRNG)),
 			data.szDwRNG, static_cast<TCHAR>(_countof(data.szDwRNG)),
 			data.szUpRR, static_cast<TCHAR>(_countof(data.szUpRR)),
-			data.szDwRR, static_cast<TCHAR>(_countof(data.szDwRR)),
-			data.sz2wayRNG, static_cast<TCHAR>(_countof(data.sz2wayRNG)),
-			data.sz2wayRR, static_cast<TCHAR>(_countof(data.sz2wayRR)));
+			data.szDwRR, static_cast<TCHAR>(_countof(data.szDwRR)));
+			//data.szDwRR, static_cast<TCHAR>(_countof(data.szDwRR)),
+			//data.sz2wayRNG, static_cast<TCHAR>(_countof(data.sz2wayRNG)),
+			//data.sz2wayRR, static_cast<TCHAR>(_countof(data.sz2wayRR)));
 
 		m_AnpDataList.push_back(data);
 	}
